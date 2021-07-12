@@ -59,7 +59,7 @@ const Search: React.FC<searchPropsType> = ({ toggle, loadWeather }) => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className="flex flex-col w-full h-screen px-4 md:w-80 lg:w-96">
+    <div className="flex flex-col flex-shrink-0 w-full h-screen px-4 md:w-80 lg:w-96">
       <div className="flex justify-end py-4 relative w-full">
         <div className="flex  absolute left-0 w-full">
           {loading && <Loader size="30" color="blue" />}
