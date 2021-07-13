@@ -8,7 +8,7 @@ import { actionBtnPropsType, sidebarPropsType } from '@/types';
 let ActionBtn: React.FC<actionBtnPropsType> = ({ toggle, loadLocalWeather }) => {
   const ping = useRef<HTMLSpanElement>(null);
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between relative">
       <button
         onClick={toggle}
         className="block text-white bg-gray-600 w-40 h-10 font-sans font-medium"
@@ -68,7 +68,7 @@ const Sidebar: React.FC<sidebarPropsType> = ({ weather, toggle, loadLocalWeather
   return (
     <>
       <div className="absolute z-0 w-full h-full bg-cloud-bg bg-auto opacity-25 bg-top bg-no-repeat md:w-80 flex-shrink-0 lg:w-96"></div>
-      <div className="flex flex-col w-full h-screen  px-2 py-3 z-10 md:w-80 lg:w-96 flex-shrink-0">
+      <div className="flex overflow-hidden flex-col w-full h-screen  px-2 py-3 z-10 md:w-80 lg:w-96 flex-shrink-0">
         <ActionBtn loadLocalWeather={loadLocalWeather} toggle={toggle} />
         <CurrentWeather weather={weather?.consolidated_weather[0]} title={weather?.title} />
       </div>
